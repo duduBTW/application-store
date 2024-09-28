@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1f1f1f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(1.06);
+    opacity: 0.4;
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+::view-transition-old(root) {
+  animation: 100ms cubic-bezier(0.4, 0, 0.2, 1) both zoom-out;
+}
+
+::view-transition-new(root) {
+  animation: 200ms cubic-bezier(0.4, 0, 0.2, 1) both zoom-in;
+}
